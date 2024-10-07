@@ -1,0 +1,403 @@
+/* Hide the navbar initially with opacity */
+.navbar {
+  opacity: 0;
+  background: linear-gradient(-45deg, #f1ca89, #f29191, #907fa4, #4aa96c);
+  background-size: 400% 400%;
+  animation: animasiNavbar 15s ease infinite;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 1s ease-in-out; /* Animasi untuk navbar */
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animasi Navbar */
+@keyframes animasiNavbar {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Class untuk animasi fade-in */
+.show-navbar {
+  opacity: 1; /* Navbar menjadi terlihat */
+}
+
+/* tentang */
+.tentang-kita {
+  border-radius: 10px;
+  margin-top: 29px;
+  display: flex;
+  flex-direction: column; /* Mengatur tata letak secara vertikal */
+  justify-content: center; /* Memusatkan konten secara vertikal */
+  align-items: center;
+  height: 140vh;
+  background: linear-gradient(145deg, #f1ca89, #f29191);
+  padding: 20px; /* Mengurangi padding agar lebih seimbang */
+}
+
+.konten-tentang {
+  max-width: 800px;
+  text-align: center;
+  color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+  animation: fadeIn 2s ease-in-out;
+  margin-bottom: 40px; /* Memberi ruang di bawah konten teks */
+}
+
+.judul-tentang {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.isi-tentang {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.foto-tentang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Memberi jarak antar foto */
+  padding: 20px; /* Mengurangi padding agar lebih seimbang */
+  flex-wrap: wrap; /* Agar foto bisa berpindah ke bawah di layar kecil */
+}
+
+.foto-tentang .gambar {
+  width: 25%;
+  height: 10%;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan lembut untuk efek 3D */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efek saat hover */
+}
+
+.foto-tentang .gambar:hover {
+  transform: scale(1.05); /* Sedikit perbesar saat di-hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Perbesar bayangan saat di-hover */
+}
+
+@media (max-width: 768px) {
+  .foto-tentang .gambar {
+    width: 90%;
+    height: auto; /* Agar foto proporsional di layar kecil */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* kenangan */
+/* Gaya Umum untuk Section Kenangan */
+.kenangan {
+  border-radius: 10px;
+  margin-top: 29px;
+  background-color: #f1ca89; /* Warna latar belakang */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Konten Kenangan */
+.konten-kenangan {
+  margin-bottom: 40px;
+}
+
+/* Judul Kenangan */
+.judul-kenangan {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff; /* Warna judul */
+}
+
+/* Deskripsi Kenangan */
+.deskripsi-kenangan {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #fff; /* Warna deskripsi */
+}
+
+/* Gaya untuk Galeri Kenangan */
+.galeri-kenangan {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Lebar min item lebih besar */
+  gap: 20px;
+  padding: 20px;
+}
+
+.item-kenangan {
+  position: relative;
+  margin-bottom: 60px; /* Tambah margin bawah agar tombol tidak tertutupi */
+}
+
+.item-kenangan img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Mengatur gambar agar terisi penuh */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; /* Transisi saat hover */
+}
+
+.item-kenangan:hover img {
+  transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+/* Deskripsi Kenangan */
+.deskripsi-kenangan {
+  position: absolute;
+  bottom: 10px; /* Jarak dari bawah diperbesar */
+  left: 10px; /* Beri jarak dari kiri */
+  right: 10px; /* Beri jarak dari kanan */
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  border-radius: 10px; /* Membulatkan sudut deskripsi */
+  transition: background-color 0.3s ease;
+}
+
+.item-kenangan:hover .deskripsi-kenangan {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Gaya Form Upload */
+/* Form Tambah Kenangan */
+.galeri-kenangan .form-post {
+  box-shadow: 1px 5px 3px rgba(0, 0, 0, 0.205);
+  margin-bottom: 30px;
+  background: #ffffffb2; /* Latar belakang putih untuk form */
+  padding: 20px;
+  border-radius: 10px; /* Sudut membulat */
+  display: flex;
+  flex-direction: column; /* Buat semua elemen form berurutan secara vertikal */
+  gap: 20px; /* Memberikan jarak antar elemen */
+}
+
+/* Label untuk Form */
+.galeri-kenangan label {
+  font-size: 1.2em;
+  color: #333; /* Warna label */
+  margin-bottom: 10px;
+  display: block; /* Menjadikan label tampil di baris baru */
+}
+
+/* Input Teks dan File */
+.galeri-kenangan input[type="text"],
+.galeri-kenangan input[type="file"] {
+  width: 95%; /* Lebar input 95% */
+  margin-left: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #f1ca89; /* Border dengan warna romantis */
+  border-radius: 5px; /* Sudut membulat */
+  font-size: 1em;
+  font-family: "Arial", sans-serif;
+  transition: border-color 0.3s; /* Transisi border saat hover */
+}
+
+.galeri-kenangan input[type="text"]:focus,
+.galeri-kenangan input[type="file"]:focus {
+  border-color: #f1ca89; /* Warna border saat fokus */
+  outline: none; /* Menghilangkan outline default */
+}
+
+/* Gaya Tombol */
+.galeri-kenangan button {
+  width: 97.3%;
+  margin-left: 10px;
+  background-color: #f1ca89; /* Warna tombol */
+  color: #fff; /* Warna teks tombol */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px; /* Sudut membulat */
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s; /* Transisi saat hover */
+  margin-top: 10px; /* Tambahkan jarak dari input sebelumnya */
+}
+
+.galeri-kenangan button:hover {
+  background-color: #f3c069; /* Warna saat hover */
+}
+
+/* Gaya untuk Tombol Hapus */
+.item-kenangan form {
+  position: absolute;
+  top: 10px; /* Posisikan tombol hapus di bagian atas */
+  right: 10px; /* Posisikan di kanan atas */
+}
+
+.hapus-form .hapus {
+  background-color: transparent;
+}
+
+.item-kenangan button[name="hapus"] {
+  background-color: #f44336;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.item-kenangan button[name="hapus"]:hover {
+  background-color: #c62828;
+}
+
+/* Kontak */
+.konten-kontak {
+  margin-top: 100px;
+  border-radius: 6px;
+  height: 100%; /* Mengatur tinggi agar memenuhi layar */
+  background: linear-gradient(145deg, #f1ca89, #f29191);
+  background-size: 400% 400%;
+  animation: animasiBegron 15s;
+  /* ease infinite */
+  padding: 20px;
+  color: white; /* Ubah warna teks agar kontras dengan latar belakang */
+}
+
+@keyframes animasiBegron {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.judul-kontak {
+  text-align: center;
+  color: #4a4a4a; /* Warna yang lebih lembut */
+  font-size: 28px; /* Ukuran font lebih besar */
+  margin-bottom: 15px;
+  font-family: "Arial", sans-serif; /* Menggunakan font yang lebih modern */
+}
+
+.deskripsi-kontak {
+  font-size: 18px; /* Ukuran font sedikit lebih besar */
+  color: #666;
+  margin-bottom: 25px;
+  text-align: center; /* Rata tengah untuk kesan lebih rapi */
+}
+
+.info-kontak {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: center; /* Rata tengah untuk daftar info */
+}
+
+.info-kontak li {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.info-kontak a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s; /* Transisi halus saat hover */
+}
+
+.info-kontak a:hover {
+  text-decoration: underline;
+  color: #0056b3; /* Warna saat hover lebih gelap */
+}
+
+.form-kontak {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px; /* Membatasi lebar untuk tampilan yang lebih baik */
+  margin: 0 auto; /* Tengah secara horizontal */
+}
+
+.form-kontak label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-kontak input,
+.form-kontak textarea {
+  margin-bottom: 20px;
+  padding: 12px; /* Menambah padding untuk kenyamanan saat mengetik */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s; /* Transisi halus saat fokus */
+}
+
+.form-kontak input:focus,
+.form-kontak textarea:focus {
+  border-color: #007bff; /* Ubah warna border saat fokus */
+  outline: none; /* Menghilangkan outline default */
+}
+
+.tombol-kirim {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transisi halus saat hover */
+}
+
+.tombol-kirim:hover {
+  background-color: #0056b3; /* Warna saat hover lebih gelap */
+}
